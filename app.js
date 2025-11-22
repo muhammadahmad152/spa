@@ -1,17 +1,26 @@
-function initMap(){
-    const lat_lng = new google.maps.LatLng(24.863531596277493, 67.07438200674729)
+ function toggleTheme() {
+      let body = document.getElementById("body");
 
-    const mymap = new google.maps.Map(document.getElementById("map"),{
+      if (body.style.backgroundColor === "black") {
+        // Light mode
+        body.style.backgroundColor = "white";
+        body.style.color = "black";
+        localStorage.setItem("theme", "light");
+      } 
+      else {
+        // Dark mode
+        body.style.backgroundColor = "black";
+        body.style.color = "white";
+        localStorage.setItem("theme", "dark");
+      }
+    }
 
-        center : lat_lng,
-        zoom : 10,
-        type : 'satellite'
-    })
+    // Load saved theme
+    window.onload = () => {
+      let saved = localStorage.getItem("theme");
 
-    const mark = new google.maps.Marker({
-
-        position : lat_lng,
-        map : mymap,
-        title : 'aptech SFC'
-    })
-}
+      if (saved === "dark") {
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+      }
+    };
