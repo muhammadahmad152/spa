@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aptech SYSTEM "data.dtd" [
+
+    <!ENTITY b "hello world">
+    <!ENTITY a "Aptech Pakistan">
+]>
+<aptech>
+
+        <student id="abc">
+        <name> &a; </name>
+        <email>ali@gmail.com</email>
+        <age>20</age>
+        <city>karachi</city>
+        <phone>54948745</phone>
+
+    </student>
+
+    
+        <student id="abc">
+        <name>zeeshan</name>
+        <email>zeeshan@gmail.com</email>
+        <age>22</age>
+        <city>gujrawalla</city>
+        <phone>65762156</phone>
+
+    </student>
+
+
+        <student id="abc">
+        <name> &b; </name>
+        <email>waleed@gmail.com</email>
+        <age>18</age>
+        <city>lahore</city>
+        <phone>81657457</phone>
+
+    </student>
+
+</aptech>

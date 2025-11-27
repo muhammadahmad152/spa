@@ -1,0 +1,10 @@
+<!ELEMENT aptech (student*)>
+    <!ELEMENT student (name+, email?,age*,city, (phone | contact ))>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ELEMENT age (#PCDATA)>
+    <!ELEMENT city (#PCDATA)>
+    <!ELEMENT phone (#PCDATA)>
+    <!ELEMENT contact (#PCDATA)>
+
+    <!ATTLIST student id CDATA #REQUIRED>
