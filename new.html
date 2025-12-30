@@ -2,46 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Geolocation Demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        #map {
-            margin-top: 1rem;
-            min-height: 220px;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #f8f9fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .small-note {
-            font-size: .9rem;
-            color: #6c757d;
-            margin-top: .5rem;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array object</title>
 </head>
 
 <body>
-    <div class="container py-4">
-        <h1 class="text-center">Geolocation</h1>
 
-        <div class="text-center">
+    <h1 id="hh">Website</h1>
 
-            <button id="getLocBtn" class="btn btn-warning mt-3">Get my location</button>
-            <div class="small-note">Your browser will ask permission to share location.</div>
-        </div>
+    <input type="text"placeholdeer="Enter Number1" id="one">
+    <input type="text"placeholdeer="Enter Number2" id="two">
+    <!-- <input type="text" readonly id="three"> -->
 
-        <div id="map" class="mt-3 w-100">
-            <div id="mapMessage" class="text-center p-3">Click the button to get your location.</div>
-        </div>
-    </div>
+    <button id="btn" onclick="sum()">Shirts</button>
+    <button id="btn" onclick="sum1()">Pents</button>
+    <button id="btn" onclick="sum2()">Shoes</button>
 
-    <script src="assets/new.js"></script>
+    <script>
+        function sum(){
+            document.getElementById('hh').innerHTML = "<h1> Shirts </h1>"
+        }
+        function sum1(){
+            document.getElementById('hh').innerHTML = "<h1> Pents </h1>"
+        }
+        function sum2(){
+            document.getElementById('hh').innerHTML = "<h1> Shoes </h1>"
+        }
+
+
+        // array 
+
+        // object 
+
+        // const car = {
+        //     name: "talha",
+        //     model: 2006,
+        //     price: 5000,
+        //     start: function () {
+        //         document.write("Talha is going to the park");
+        //     }
+        // };
+
+        // car.start();
+    </script>
+
 </body>
 
 </html>
