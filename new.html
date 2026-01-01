@@ -56,20 +56,38 @@
     <button id="btn" onclick="sum2()">Shoes</button>
 
     <button onclick="toggleTheme()">Toggle Theme</button>
-
+    <!-- Car Details Section -->
+    <div id="carDetails" class="car-details" style="display: none;">
+        <h3 id="carModel">Model: </h3>
+        <p id="carPrice">Price: </p>
+        <p id="carDescription">Description: </p>
+    </div>
 
     <script>
 
-        function setImg() {
-            document.getElementById('productImg').src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5OOdmroWDpWEbbytAew7LAkKvzUYhmZZx8Q&s"
+         function setImg() {
+            document.getElementById('productImg').src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5OOdmroWDpWEbbytAew7LAkKvzUYhmZZx8Q&s";
+            
+            // Show car details for the first image (Bugatti)
+            document.getElementById('carModel').innerHTML = "Model: Bugatti Divo";
+            document.getElementById('carPrice').innerHTML = "Price: $5.8 Million";
+            document.getElementById('carDescription').innerHTML = "Description: The Bugatti Divo is a high-performance luxury sports car with an 8.0-liter quad-turbo W16 engine.";
+            
+            // Show the details section
+            document.getElementById('carDetails').style.display = 'block';
         }
-
-        function setImg1() {
-
-            document.getElementById('productImg').src = "https://mgmotors.com.pk/_next/image?url=%2Fassets%2Foptimized-imgs%2FMG4-crop_11zon.webp&w=1080&q=75"
+          function setImg1() {
+            document.getElementById('productImg').src = "https://mgmotors.com.pk/_next/image?url=%2Fassets%2Foptimized-imgs%2FMG4-crop_11zon.webp&w=1080&q=75";
+            
+            // Show car details for the second image (MG4)
+            document.getElementById('carModel').innerHTML = "Model: MG4 Electric";
+            document.getElementById('carPrice').innerHTML = "Price: $30,000";
+            document.getElementById('carDescription').innerHTML = "Description: The MG4 Electric is a sleek, efficient electric vehicle offering impressive range and cutting-edge technology.";
+            
+            // Show the details section
+            document.getElementById('carDetails').style.display = 'block';
         }
-
-
+        
         function sum() {
             document.getElementById('hh').innerHTML = "<h2> Shirts </h2>"
         }
