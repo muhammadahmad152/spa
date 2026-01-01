@@ -5,46 +5,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array object</title>
+    <style>
+        body {
+            transition: 0.4s;
+            font-family: Arial, sans-serif;
+        }
+
+        .black {
+            background-color: black;
+            color: white;
+        }
+
+        .blue {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .grey {
+            background-color: grey;
+            color: white;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
 
     <h1 id="hh">Website</h1>
 
-    <input type="text"placeholdeer="Enter Number1" id="one">
-    <input type="text"placeholdeer="Enter Number2" id="two">
+    <img id="productImg" src="https://muxtech.com.pk/wp-content/uploads/2025/04/Bugatti-Divo-car-1024x597.webp"
+        style="width:300px; height:200px; border: 2px solid #ccc; display:block;margin-bottom: 20px;">
+    <button onclick="setImg()">First Image</button>
+    <button onclick="setImg1()">Second Image</button>
+
+    <!-- <button onclick="sum(2, 4)"> sum</button>> -->
+    <br><br>
+
+    
+    <input type="text" placeholder="Enter Number1" id="one">
+    <input type="text" placeholder="Enter Number2" id="two">
     <!-- <input type="text" readonly id="three"> -->
 
     <button id="btn" onclick="sum()">Shirts</button>
     <button id="btn" onclick="sum1()">Pents</button>
     <button id="btn" onclick="sum2()">Shoes</button>
 
+    <button onclick="toggleTheme()">Toggle Theme</button>
+
+
     <script>
-        function sum(){
-            document.getElementById('hh').innerHTML = "<h1> Shirts </h1>"
-        }
-        function sum1(){
-            document.getElementById('hh').innerHTML = "<h1> Pents </h1>"
-        }
-        function sum2(){
-            document.getElementById('hh').innerHTML = "<h1> Shoes </h1>"
+
+        function setImg() {
+            document.getElementById('productImg').src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5OOdmroWDpWEbbytAew7LAkKvzUYhmZZx8Q&s"
         }
 
+        function setImg1() {
 
-        // array 
+            document.getElementById('productImg').src = "https://mgmotors.com.pk/_next/image?url=%2Fassets%2Foptimized-imgs%2FMG4-crop_11zon.webp&w=1080&q=75"
+        }
 
-        // object 
 
-        // const car = {
-        //     name: "talha",
-        //     model: 2006,
-        //     price: 5000,
-        //     start: function () {
-        //         document.write("Talha is going to the park");
-        //     }
-        // };
+        function sum() {
+            document.getElementById('hh').innerHTML = "<h2> Shirts </h2>"
+        }
+        function sum1() {
+            document.getElementById('hh').innerHTML = "<h2> Pents </h2>"
+        }
+        function sum2() {
+            document.getElementById('hh').innerHTML = "<h2> Shoes </h2>"
+        }
 
-        // car.start();
+
+        function sum(a, b) {
+            document.write(a = b);
+        }
+
+        // Theme Toggle
+        let themes = ["black", "blue", "grey"];
+        let index = 0;
+
+        function toggleTheme() {
+            document.body.className = themes[index];
+            index = (index + 1) % themes.length;
+
+        }
     </script>
 
 </body>

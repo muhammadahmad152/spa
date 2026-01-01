@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array object</title>
+
+    <style>
+        body {
+            transition: 0.4s;
+            font-family: Arial, sans-serif;
+        }
+
+        .black {
+            background-color: black;
+            color: white;
+        }
+
+        .blue {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .grey {
+            background-color: grey;
+            color: white;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="black">
+
+    <h1 id="hh">Website</h1>
+
+    <input type="text" placeholder="Enter Number1" id="one">
+    <input type="text" placeholder="Enter Number2" id="two">
+
+    <br><br>
+
+    <button onclick="sum()">Shirts</button>
+    <button onclick="sum1()">Pents</button>
+    <button onclick="sum2()">Shoes</button>
+
+    <br><br>
+
+    <button onclick="toggleTheme()">Toggle Theme</button>
+
+    <script>
+        function sum() {
+            document.getElementById('hh').innerHTML = "Shirts";
+        }
+
+        function sum1() {
+            document.getElementById('hh').innerHTML = "Pents";
+        }
+
+        function sum2() {
+            document.getElementById('hh').innerHTML = "Shoes";
+        }
+
+        // Theme Toggle
+        let themes = ["black", "blue", "grey"];
+        let index = 0;
+
+        function toggleTheme() {
+            document.body.className = themes[index];
+            index = (index + 1) % themes.length;
+        }
+        
+    </script>
+
+</body>
+
+</html>

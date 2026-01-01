@@ -1,18 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            margin: 20px;
+        }
+
+        #hh {
+            font-size: 2em;
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .product-list {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .product-list div {
+            margin: 10px 0;
+        }
+
+        .product-list .product {
+            font-size: 1.2em;
+        }
+
+        /* toggle theme  */
+        body {
+            transition: 0.4s;
+            font-family: Arial, sans-serif;
+        }
+
+        .black {
+            background-color: black;
+            color: white;
+        }
+
+        .blue {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .grey {
+            background-color: grey;
+            color: white;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Toggle button center */
+        .theme-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<body id="body">
 
-  <h1>Welcome to Our Website</h1>
-  <p>Experience Light / Dark Mode</p>
+<body>
 
-  <!-- Toggle Button -->
-  <button onclick="toggleTheme()">Toggle Theme</button>
+    <header>
+        <h1 id="hh">Welcome to the Shop</h1>
+    </header>
 
-  <script src="assets/app.js"></script>
+    <div style="text-align: center;">
+        <input type="number" id="one" placeholder="Enter Price for Shirt" />
+        <input type="number" id="two" placeholder="Enter Price for Pant" />
+        <input type="number" id="three" placeholder="Enter Price for Shoes" />
+    </div>
+
+    <div style="text-align: center;">
+        <button onclick="displayProduct('Shirt')">Shirts</button>
+        <button onclick="displayProduct('Pant')">Pants</button>
+        <button onclick="displayProduct('Shoes')">Shoes</button>
+    </div>
+
+    <div class="theme-btn">
+        <button onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+
+
+    <div class="result" id="result"></div>
+
+    <div class="product-list" id="product-list"></div>
+
+    <script>
+        const products = [
+            {
+                name: "Shirt",
+                price: 0
+            },
+            {
+                name: "Pant",
+                price: 0
+            },
+            {
+                name: "Shoes",
+                price: 0
+            }
+        ];
+
+        // Function to display the product name and input price
+        function displayProduct(productName) {
+            // Update the title
+            document.getElementById('hh').innerHTML = `<h1>${productName}</h1>`;
+
+            // Find the product and update the price
+            const product = products.find(p => p.name === productName);
+            if (productName === 'Shirt') {
+                product.price = parseFloat(document.getElementById('one').value) || 0;
+            } else if (productName === 'Pant') {
+                product.price = parseFloat(document.getElementById('two').value) || 0;
+            } else if (productName === 'Shoes') {
+                product.price = parseFloat(document.getElementById('three').value) || 0;
+            }
+
+            // Display product info
+            document.getElementById('result').innerHTML = `${productName} Price: $${product.price}`;
+            displayProductList();
+        }
+
+        // Function to display all products
+        function displayProductList() {
+            const list = products.map(product => {
+                return `<div class="product">${product.name}: $${product.price}</div>`;
+            }).join('');
+            document.getElementById('product-list').innerHTML = list;
+        }
+        // Theme Toggle
+        let themes = ["black", "blue", "grey"];
+        let index = 0;
+
+        function toggleTheme() {
+            document.body.className = themes[index];
+            index = (index + 1) % themes.length;
+        }
+    </script>
 
 </body>
-</html>
 
+</html>
