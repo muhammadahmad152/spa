@@ -1,198 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Shop</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-
-        header {
-            text-align: center;
-            margin: 20px;
-        }
-
-        #hh {
-            font-size: 2em;
-            color: #333;
-        }
-
-        input {
-            padding: 10px;
-            margin: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        button {
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        .result {
-            margin-top: 20px;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
-        .product-list {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .product-list div {
-            margin: 10px 0;
-        }
-
-        .product-list .product {
-            font-size: 1.2em;
-        }
-
-        /* toggle theme  */
-        body {
-            transition: 0.4s;
-            font-family: Arial, sans-serif;
-        }
-
-        .black {
-            background-color: black;
-            color: white;
-        }
-
-        .blue {
-            background-color: #0d6efd;
-            color: white;
-        }
-
-        .grey {
-            background-color: grey;
-            color: white;
-        }
-
-        button {
-            padding: 8px 15px;
-            margin: 5px;
-            cursor: pointer;
-        }
-
-        button {
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Toggle button center */
-        .theme-btn {
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
+    <!-- <h1>Hello, world!</h1> -->
 
-    <header>
-        <h1 id="hh">Welcome to the Shop</h1>
-    </header>
 
-    <div style="text-align: center;">
-        <input type="number" id="one" placeholder="Enter Price for Shirt" />
-        <input type="number" id="two" placeholder="Enter Price for Pant" />
-        <input type="number" id="three" placeholder="Enter Price for Shoes" />
+
+    <!-- Navbar Start  -->
+
+    <nav class="navbar navbar-expand-lg bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">MA Technology</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something difficult here</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li> -->
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Slide Start -->
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="image.avif" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="image.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="image1.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="image3.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images.jpeg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-
-    <div style="text-align: center;">
-        <button onclick="displayProduct('Shirt')">Shirts</button>
-        <button onclick="displayProduct('Pant')">Pants</button>
-        <button onclick="displayProduct('Shoes')">Shoes</button>
-    </div>
-
-    <div class="theme-btn">
-        <button onclick="toggleTheme()">Toggle Theme</button>
-    </div>
+    <!-- Slide End -->
 
 
-    <div class="result" id="result"></div>
-
-    <div class="product-list" id="product-list"></div>
-
-    <script>
-        const products = [
-            {
-                name: "Shirt",
-                price: 0
-            },
-            {
-                name: "Pant",
-                price: 0
-            },
-            {
-                name: "Shoes",
-                price: 0
-            }
-        ];
-
-        // Function to display the product name and input price
-        function displayProduct(productName) {
-            // Update the title
-            document.getElementById('hh').innerHTML = `<h1>${productName}</h1>`;
-
-            // Find the product and update the price
-            const product = products.find(p => p.name === productName);
-            if (productName === 'Shirt') {
-                product.price = parseFloat(document.getElementById('one').value) || 0;
-            } else if (productName === 'Pant') {
-                product.price = parseFloat(document.getElementById('two').value) || 0;
-            } else if (productName === 'Shoes') {
-                product.price = parseFloat(document.getElementById('three').value) || 0;
-            }
-
-            // Display product info
-            document.getElementById('result').innerHTML = `${productName} Price: $${product.price}`;
-            displayProductList();
-        }
-
-        // Function to display all products
-        function displayProductList() {
-            const list = products.map(product => {
-                return `<div class="product">${product.name}: $${product.price}</div>`;
-            }).join('');
-            document.getElementById('product-list').innerHTML = list;
-        }
-        // Theme Toggle
-        let themes = ["black", "blue", "grey"];
-        let index = 0;
-
-        function toggleTheme() {
-            document.body.className = themes[index];
-            index = (index + 1) % themes.length;
-        }
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

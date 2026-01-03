@@ -1,119 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array object</title>
+    <title>Meri Bootstrap Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            transition: 0.4s;
-            font-family: Arial, sans-serif;
+        .hero-section {
+            background-color: #f8f9fa;
+            padding: 100px 0;
         }
+        /* 1. Modern Gradient Background & Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
 
-        .black {
-            background-color: black;
-            color: white;
-        }
+body {
+    font-family: 'Inter', sans-serif; /* Modern font */
+    color: #333;
+}
 
-        .blue {
-            background-color: #0d6efd;
-            color: white;
-        }
+/* 2. Glassmorphism Effect for Navbar */
+.navbar {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px); /* धुंधला असर */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        .grey {
-            background-color: grey;
-            color: white;
-        }
+/* 3. Hero Section Gradient */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 120px 0;
+    clip-path: ellipse(150% 100% at 50% 0%); /* Modern curve shape */
+}
 
-        button {
-            padding: 8px 15px;
-            margin: 5px;
-            cursor: pointer;
-        }
+/* 4. Modern Card Styling (Soft Shadows) */
+.card {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Card upar uthega */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. Custom Button (Glow Effect) */
+.btn-primary {
+    background: #764ba2;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #667eea;
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+}
+
+/* 6. Form Input Modernization */
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+    border: 2px solid #eee;
+}
+
+.form-control:focus {
+    border-color: #764ba2;
+    box-shadow: none;
+}
+/* Dark mode default variables */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #f8f9fa;
+    --card-bg: #1e1e1e;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+/* Dark mode ke liye card aur section settings */
+[data-theme="dark"] .card {
+    background-color: var(--card-bg);
+    color: white;
+}
+
+[data-theme="dark"] .bg-light {
+    background-color: #1a1a1a !important;
+}
     </style>
 </head>
-
 <body>
 
-    <h1 id="hh">Website</h1>
+    <button class="btn btn-outline-secondary ms-lg-3" id="theme-toggle">
+    🌙 Dark Mode
+</button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">MyBrand</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <img id="productImg" src="https://muxtech.com.pk/wp-content/uploads/2025/04/Bugatti-Divo-car-1024x597.webp"
-        style="width:300px; height:200px; border: 2px solid #ccc; display:block;margin-bottom: 20px;">
-    <button onclick="setImg()">First Image</button>
-    <button onclick="setImg1()">Second Image</button>
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Bootstrap Se Website Banana Asan Hai</h1>
+            <p class="lead">Yeh ek responsive landing page hai jo har screen size par fit baithta hai.</p>
+            <a href="#" class="btn btn-primary btn-lg">Shuru Karein</a>
+        </div>
+    </header>
 
-    <!-- <button onclick="sum(2, 4)"> sum</button>> -->
-    <br><br>
-
-    
-    <input type="text" placeholder="Enter Number1" id="one">
-    <input type="text" placeholder="Enter Number2" id="two">
-    <!-- <input type="text" readonly id="three"> -->
-
-    <button id="btn" onclick="sum()">Shirts</button>
-    <button id="btn" onclick="sum1()">Pents</button>
-    <button id="btn" onclick="sum2()">Shoes</button>
-
-    <button onclick="toggleTheme()">Toggle Theme</button>
-    <!-- Car Details Section -->
-    <div id="carDetails" class="car-details" style="display: none;">
-        <h3 id="carModel">Model: </h3>
-        <p id="carPrice">Price: </p>
-        <p id="carDescription">Description: </p>
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h3>Responsive</h3>
+                            <p>Mobile, Tablet aur Desktop sab par sahi chalti hai.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h3>Fast</h3>
+                            <p>Bootstrap ke pre-built components se kaam jaldi hota hai.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h3>Modern</h3>
+                            <p>Isme latest design trends ka istemal kiya gaya hai.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Hamare Plans</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm text-center">
+                    <div class="card-header py-3"><h4>Basic</h4></div>
+                    <div class="card-body">
+                        <h1>₹0 <small class="text-muted">/ mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>1 Website</li>
+                            <li>Free Hosting</li>
+                            <li>Community Support</li>
+                        </ul>
+                        <button type="button" class="btn btn-outline-primary">Join Karein</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm text-center border-primary">
+                    <div class="card-header py-3 bg-primary text-white"><h4>Pro</h4></div>
+                    <div class="card-body">
+                        <h1>₹999 <small class="text-muted">/ mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>10 Websites</li>
+                            <li>Priority Support</li>
+                            <li>SSL Certificate</li>
+                        </ul>
+                        <button type="button" class="btn btn-primary">Best Choice</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm text-center">
+                    <div class="card-header py-3"><h4>Enterprise</h4></div>
+                    <div class="card-body">
+                        <h1>₹2499 <small class="text-muted">/ mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Unlimited Sites</li>
+                            <li>24/7 Support</li>
+                            <li>Custom Domain</li>
+                        </ul>
+                        <button type="button" class="btn btn-outline-primary">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+<section class="py-5">
+    <div class="container" style="max-width: 600px;">
+        <h2 class="text-center mb-4">Humein Message Karein</h2>
+        <form>
+            <div class="mb-3">
+                <label class="form-label">Aapka Naam</label>
+                <input type="text" class="form-control" placeholder="Naam likhein">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-control" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" rows="4" placeholder="Aapka sawal..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark w-100">Send Message</button>
+        </form>
+    </div>
+</section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2025 Meri Website | Bootstrap Se Banayi Gayi</p>
+    </footer>
+
 
     <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+const body = document.documentElement;
 
-         function setImg() {
-            document.getElementById('productImg').src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5OOdmroWDpWEbbytAew7LAkKvzUYhmZZx8Q&s";
-            
-            // Show car details for the first image (Bugatti)
-            document.getElementById('carModel').innerHTML = "Model: Bugatti Divo";
-            document.getElementById('carPrice').innerHTML = "Price: $5.8 Million";
-            document.getElementById('carDescription').innerHTML = "Description: The Bugatti Divo is a high-performance luxury sports car with an 8.0-liter quad-turbo W16 engine.";
-            
-            // Show the details section
-            document.getElementById('carDetails').style.display = 'block';
-        }
-          function setImg1() {
-            document.getElementById('productImg').src = "https://mgmotors.com.pk/_next/image?url=%2Fassets%2Foptimized-imgs%2FMG4-crop_11zon.webp&w=1080&q=75";
-            
-            // Show car details for the second image (MG4)
-            document.getElementById('carModel').innerHTML = "Model: MG4 Electric";
-            document.getElementById('carPrice').innerHTML = "Price: $30,000";
-            document.getElementById('carDescription').innerHTML = "Description: The MG4 Electric is a sleek, efficient electric vehicle offering impressive range and cutting-edge technology.";
-            
-            // Show the details section
-            document.getElementById('carDetails').style.display = 'block';
-        }
-        
-        function sum() {
-            document.getElementById('hh').innerHTML = "<h2> Shirts </h2>"
-        }
-        function sum1() {
-            document.getElementById('hh').innerHTML = "<h2> Pents </h2>"
-        }
-        function sum2() {
-            document.getElementById('hh').innerHTML = "<h2> Shoes </h2>"
-        }
+toggleBtn.addEventListener('click', () => {
+    if (body.getAttribute('data-theme') === 'dark') {
+        body.removeAttribute('data-theme');
+        toggleBtn.innerHTML = "🌙 Dark Mode";
+        localStorage.setItem('theme', 'light');
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        toggleBtn.innerHTML = "☀️ Light Mode";
+        localStorage.setItem('theme', 'dark');
+    }
+});
 
-
-        function sum(a, b) {
-            document.write(a = b);
-        }
-
-        // Theme Toggle
-        let themes = ["black", "blue", "grey"];
-        let index = 0;
-
-        function toggleTheme() {
-            document.body.className = themes[index];
-            index = (index + 1) % themes.length;
-
-        }
+// Purani choice yaad rakhne ke liye (Local Storage)
+if (localStorage.getItem('theme') === 'dark') {
+    body.setAttribute('data-theme', 'dark');
+    toggleBtn.innerHTML = "☀️ Light Mode";
+}
     </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
